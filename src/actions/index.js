@@ -10,7 +10,7 @@ export const FETCH_WEATHER = 'FETCH_WEATHER';
 export function fetchWeatherSuccess(response) {
   return {
     type: FETCH_WEATHER_SUCCESS,
-    payload: response.data
+    payload: response
   }
 }
 
@@ -28,9 +28,6 @@ export function fetchWeather(city) {
     return request.then(response => { dispatch(fetchWeatherSuccess(response)); })
                   .catch(error => { dispatch(fetchWeatherError(error)); });
   }
-
-  // request.then(res => { dispatch(fetchWeatherSuccess(response)); })
-  //        .catch(err => { dispatch(fetchWeatherError(err)); });
 
   return {
     type: FETCH_WEATHER,

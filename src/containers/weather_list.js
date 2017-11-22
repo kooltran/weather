@@ -7,7 +7,6 @@ import GoogleMap from '../components/google_map';
 class WeatherList extends Component {
 
   renderWeather(cityData) {
-    console.log(cityData, 'cityData');
     const name = cityData.city.name;
     const temps = cityData.list.map(weather => weather.main.temp);
     const pressures = cityData.list.map(weather => weather.main.pressure);
@@ -36,8 +35,7 @@ class WeatherList extends Component {
           </tr>
         </thead>
         <tbody>
-          {this.props.weather.map(this.renderWeather)}
-          {console.log(this.props.weather, 'this.props.weather')}
+          { this.props.weather.error === null ? this.props.weather.weatherItem.map(this.renderWeather)  : alert(this.props.weather.error.response.data.message) }
         </tbody>
       </table>
     )
@@ -45,13 +43,9 @@ class WeatherList extends Component {
 }
 
 function mapStateToProp(state) {
-  console.log(state, 'state');
   return {
-    weather: state.weather.weatherItem
+    weather: state.weather
   };
-  // return {
-  //   weather: state.weather
-  // };
 }
 
 export default connect(mapStateToProp)(WeatherList);

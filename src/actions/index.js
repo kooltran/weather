@@ -22,15 +22,14 @@ export function fetchWeatherError(error) {
 }
 
 export function fetchWeather(city) {
-  const url = `${ROOT_URL}&q=${city},us`;
+  const url = `${ROOT_URL}&q=${city},uk`;
   const request = axios.get(url);
   return dispatch => {
     return request.then(response => { dispatch(fetchWeatherSuccess(response)); })
                   .catch(error => { dispatch(fetchWeatherError(error)); });
   }
-
-  return {
-    type: FETCH_WEATHER,
-    payload: request
-  };
+  // return {
+  //   type: FETCH_WEATHER,
+  //   payload: request
+  // };
 }

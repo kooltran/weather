@@ -1,5 +1,5 @@
 td, th {
-    vertical-align: middle;
+    vertical-align: middle !important;
     text-align: center;
 }
 

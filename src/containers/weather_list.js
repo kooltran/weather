@@ -6,6 +6,14 @@ import GoogleMap from '../components/google_map';
 
 class WeatherList extends Component {
 
+  renderLoadingSpinner() {
+    return (
+      <div>
+        <img src="../assets/images/loading-spinner" />
+      </div>
+    )
+  }
+
   renderWeather(cityData) {
     const name = cityData.city.name;
     const temps = cityData.list.map(weather => weather.main.temp);
@@ -24,20 +32,25 @@ class WeatherList extends Component {
   }
 
   render() {
+    const { isLoading, weatherItem, error } = this.props.weather;
     return (
-      <table className="table table-hover">
-        <thead>
-          <tr>
-            <th>City</th>
-            <th>Temperature (K)</th>
-            <th>Pressure (hPa)</th>
-            <th>Humidity (%)</th>
-          </tr>
-        </thead>
-        <tbody>
-          { this.props.weather.error === null ? this.props.weather.weatherItem.map(this.renderWeather)  : alert(this.props.weather.error.response.data.message) }
-        </tbody>
-      </table>
+      <div>
+        { isLoading ? this.renderLoadingSpinner() : '' }
+        <table className="table table-hover forecast-table">
+          <thead>
+            <tr>
+              <th>City</th>
+              <th>Temperature (K)</th>
+              <th>Pressure (hPa)</th>
+              <th>Humidity (%)</th>
+            </tr>
+          </thead>
+          <tbody>
+            {weatherItem.map(this.renderWeather)}
+          </tbody>
+        </table>
+        { error == null ? '' : alert(error) }
+      </div>
     )
   }
 }

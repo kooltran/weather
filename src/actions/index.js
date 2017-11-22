@@ -7,6 +7,12 @@ export const FETCH_WEATHER_SUCCESS = 'FETCH_WEATHER_SUCCESS';
 export const FETCH_WEATHER_FAIL = 'FETCH_WEATHER_FAIL';
 export const FETCH_WEATHER = 'FETCH_WEATHER';
 
+export function fetchWeatherRequest() {
+  return {
+    type: FETCH_WEATHER,
+  }
+}
+
 export function fetchWeatherSuccess(response) {
   return {
     type: FETCH_WEATHER_SUCCESS,
@@ -22,14 +28,11 @@ export function fetchWeatherError(error) {
 }
 
 export function fetchWeather(city) {
-  const url = `${ROOT_URL}&q=${city},uk`;
+  const url = `${ROOT_URL}&q=${city},us`;
   const request = axios.get(url);
   return dispatch => {
+    dispatch(fetchWeatherRequest());
     return request.then(response => { dispatch(fetchWeatherSuccess(response)); })
                   .catch(error => { dispatch(fetchWeatherError(error)); });
   }
-  // return {
-  //   type: FETCH_WEATHER,
-  //   payload: request
-  // };
 }

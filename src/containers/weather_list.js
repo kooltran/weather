@@ -8,8 +8,22 @@ class WeatherList extends Component {
 
   renderLoadingSpinner() {
     return (
-      <div>
-        <img src="../assets/images/loading-spinner" />
+      <div className="loading-spinner">
+        <div className="dot-item dot1">
+          <div className="dot-winner"></div>
+        </div>
+        <div className="dot-item dot2">
+          <div className="dot-winner"></div>
+        </div>
+        <div className="dot-item dot3">
+          <div className="dot-winner"></div>
+        </div>
+        <div className="dot-item dot4">
+          <div className="dot-winner"></div>
+        </div>
+        <div className="dot-item dot5">
+          <div className="dot-winner"></div>
+        </div>
       </div>
     )
   }

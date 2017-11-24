@@ -1,4 +1,5 @@
-td, th {
+td,
+th {
     vertical-align: middle !important;
     text-align: center;
 }
@@ -11,90 +12,60 @@ svg {
     height: 150px;
 }
 
-td:first-of-type, td:first-of-type > div {
+td:first-of-type,
+td:first-of-type {
+  > div {
     height: 200px;
     width: 250px;
+  }
 }
 
 .forecast-table {
   position: relative;
 }
 
-.windows8 {
-	position: relative;
+.loading-spinner {
+  position: relative;
 	width: 30px;
 	height:30px;
 	margin:auto;
   margin-bottom: 20px;
-}
 
-.windows8 .wBall {
-	position: absolute;
-	width: 28px;
-	height: 28px;
-	opacity: 0;
-	transform: rotate(225deg);
-		-o-transform: rotate(225deg);
-		-ms-transform: rotate(225deg);
-		-webkit-transform: rotate(225deg);
-		-moz-transform: rotate(225deg);
-	animation: orbit 2.4225s infinite;
-		-o-animation: orbit 2.4225s infinite;
-		-ms-animation: orbit 2.4225s infinite;
-		-webkit-animation: orbit 2.4225s infinite;
-		-moz-animation: orbit 2.4225s infinite;
-}
+  .dot-item {
+  	position: absolute;
+  	width: 28px;
+  	height: 28px;
+  	opacity: 0;
+  	transform: rotate(225deg);
+  	animation: orbit 2.4225s infinite;
 
-.windows8 .wBall .wInnerBall{
-	position: absolute;
-	width: 4px;
-	height: 4px;
-	background: rgb(0,0,0);
-	left:0px;
-	top:0px;
-	border-radius: 4px;
-}
+    .dot-winner{
+    	position: absolute;
+    	width: 4px;
+    	height: 4px;
+    	background: rgb(0,0,0);
+    	left:0px;
+    	top:0px;
+    	border-radius: 4px;
+    }
+  }
 
-.windows8 #wBall_1 {
-	animation-delay: 0.526s;
-		-o-animation-delay: 0.526s;
-		-ms-animation-delay: 0.526s;
-		-webkit-animation-delay: 0.526s;
-		-moz-animation-delay: 0.526s;
-}
+  .dot1 {
+  	animation-delay: 0.526s;
+  }
 
-.windows8 #wBall_2 {
-	animation-delay: 0.103s;
-		-o-animation-delay: 0.103s;
-		-ms-animation-delay: 0.103s;
-		-webkit-animation-delay: 0.103s;
-		-moz-animation-delay: 0.103s;
-}
+  .dot2 {
+    animation-delay: 0.103s;
+  }
+  
+  .dot4 {
+  	animation-delay: 0.3195s;
+  }
 
-.windows8 #wBall_3 {
-	animation-delay: 0.2165s;
-		-o-animation-delay: 0.2165s;
-		-ms-animation-delay: 0.2165s;
-		-webkit-animation-delay: 0.2165s;
-		-moz-animation-delay: 0.2165s;
+  .dot5 {
+  	animation-delay: 0.423s;
+  }
 }
-
-.windows8 #wBall_4 {
-	animation-delay: 0.3195s;
-		-o-animation-delay: 0.3195s;
-		-ms-animation-delay: 0.3195s;
-		-webkit-animation-delay: 0.3195s;
-		-moz-animation-delay: 0.3195s;
-}
-
-.windows8 #wBall_5 {
-	animation-delay: 0.423s;
-		-o-animation-delay: 0.423s;
-		-ms-animation-delay: 0.423s;
-		-webkit-animation-delay: 0.423s;
-		-moz-animation-delay: 0.423s;
-}
-
 
 
 @keyframes orbit {
